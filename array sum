@@ -1,0 +1,37 @@
+//given an array of integers find the index of the numbersswhich would sum to 10
+//for eg: array[1,2,8,9];
+//return index 0 and 3
+
+class Solution {
+  public static void main(String[] args) {
+    
+    String str1  = "aliasgarmala";
+       
+    int[] numbers = {1,2,8,9};
+    findIndex(numbers);
+    
+  }
+  
+  public static void findIndex(int [] numbers){
+    
+    int sum = 10;
+    
+    label:
+    for(int j = 0; j < numbers.length; j++){
+      
+      int look_for_num = sum - numbers[j];
+
+      for(int i = 0; i < numbers.length; i++){
+        
+        if( look_for_num == numbers[i] ){
+          
+          System.out.println("index at "+j+" and "+i);
+          break label;
+        }
+      }
+    }
+  }
+}
+
+// here the complexity is O(n2);
+improve the complexity
