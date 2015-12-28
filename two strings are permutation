@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * To execute Java, please define "static void main" on a class
+ * named Solution.
+ *
+ * If you need more classes, simply define them inline.
+ */
+
+class Solution {
+  public static void main(String[] args) {
+    
+    String str1  = "ali";
+    String str2 = "lii";    
+    
+    System.out.println("The given string is permutation " + isPermutation(str1, str2));
+    
+  }
+  
+  public static boolean isPermutation(String str1, String str2){
+    
+      //there is no possibility of permutation
+      if(str1.length() !=  str2.length() ){
+        return false;
+      }
+
+      int [] char_arr = new int[256];
+      
+      for(int i = 0; i < str1.length(); i++){
+        
+        int ascii_char = (int) str1.charAt(i);
+        
+        char_arr[ascii_char]++;
+      }
+    
+    
+      for(int j = 0; j < str2.length(); j++){
+        
+        int ascii_char_str2 = (int) str2.charAt(j);
+        //important way to compare counts
+        if(--char_arr[ascii_char_str2] < 0){
+          return false;
+        }
+      }
+
+      return true;
+  }
+}
+
