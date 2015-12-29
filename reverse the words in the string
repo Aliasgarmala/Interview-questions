@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * Reverse the words in a string 
+ * eg: "The sky is blue" to "blue is sky The"
+ */
+
+//Logic:
+//Step 1: You have to split the words with space because the words itself are not reversed
+
+class Solution {
+  public static void main(String[] args) {
+    
+    String string = "The sky is blue";
+    
+    StringBuffer sb = new StringBuffer();
+    
+    String[] words = string.split(" ");
+    //if you are traversing from behind 
+    //remember that array index is -1 
+    for(int i = words.length - 1; i >= 0; i--){
+      sb.append(words[i]+ " ");
+     
+    }
+    
+     System.out.println(sb.toString());
+    
+   
+    
+   
+  }
+  
+   
+}
