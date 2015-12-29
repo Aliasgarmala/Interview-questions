@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+/*
+* to check if substrig is in a string
+* eg: 
+ */
+
+// if you can use java predefined function than use
+//str1.toLowerCase().contains(str2.toLowerCase());
+
+class Solution {
+  public static void main(String[] args) {
+    
+    System.out.println("check "+ checkOrder("aqwertaraliqweryfdgqwert", "qwerty"));
+   
+  }
+  
+    public static boolean checkOrder(String string, String substring) {
+    int iString = 0;
+    int iSubstring = 0;
+
+    //we scan source and increase index of next searched char in the pattern;
+    for (iString = 0; iString<string.length(); iString++) {
+      if (string.charAt(iString) == substring.charAt(iSubstring)) {
+        iSubstring++;
+      }else {
+        iSubstring = 0;
+      }
+      
+      if (iSubstring == substring.length()) {
+        //all pattern discovered, success
+        return true;
+      }
+    }
+    //nope
+    return false;
+  }
+}
