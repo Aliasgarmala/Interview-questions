@@ -1,0 +1,71 @@
+import java.io.*;
+import java.util.*;
+
+/*
+if the input array is {-1,3,2,4,5,-6,7,-9} output should be {3,-1,2,-6,4,-9,5,7} Note how the order of elements 3,2,4,5,7 and of elements -1,-6,-9 is unchanged among themselves. Also the extra positive elements 5 and 7 are placed at the end of the array. In the sub-array which maintains alternate order, positive elements are placed at even indices and negative elements are placed at odd indices.
+ */
+
+class Solution {
+  public static boolean isPositive = true;
+  public static boolean isNegative = true;
+  public static Integer [] arr = {-1,3,2,4,5,-6,7,-9};
+  public static ArrayList<Integer> arrList = new ArrayList<Integer>(Arrays.asList(arr));
+  public static ArrayList<Integer> positiveList = new ArrayList<Integer>();
+  public static ArrayList<Integer> negativeList = new ArrayList<Integer>();
+  public static ArrayList<Integer> arrangedList = new ArrayList<Integer>();
+  
+  public static void main(String[] args) {
+    
+    for(Integer num : arrList){
+      if(num > 0)
+        positiveList.add(num);
+      else 
+        negativeList.add(num);
+    }
+    
+    for(int i = 0; i < arrList.size(); i++){
+      //System.out.println(i%2);
+      if(i%2 == 0){
+          Integer numPost = getPositiveNumber();
+          System.out.println(numPost);
+          
+            arrangedList.add(numPost);
+          
+      } else {
+         Integer numNega = getNegativeNumber();
+        System.out.println(numNega);
+          
+            arrangedList.add(numNega);
+      }
+    }
+  }
+  
+  
+   public static Integer getPositiveNumber(){
+     
+     if(!positiveList.isEmpty()){
+       Integer num = positiveList.get(0);
+       positiveList.remove(num);
+       return num;
+     } else {
+       
+       return getNegativeNumber();
+     }
+      
+    }
+  
+  
+  public static Integer getNegativeNumber(){
+     
+     if(!negativeList.isEmpty()){
+       Integer num = negativeList.get(0);
+       negativeList.remove(num);
+       return num;
+     } else {
+      
+       return getPositiveNumber();
+     }
+      
+    }
+  
+}
