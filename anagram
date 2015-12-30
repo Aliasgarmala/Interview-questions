@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * Checking Anagram 
+ * An anagram is a type of word, the result of rearranging the letters of a word or phrase to produce a new word or phrase, using all the original letters exactly once
+ * eg:str1: anagram
+ * str2: nag-a-ram
+ * return true
+ 
+ * WAP to find if string2 is an Anagram of String1
+ */
+
+//NOTE: STRINGBUFFER IS THREAD SAFE WHILE STRINGBUILDER IS NOT REST ALL FUNCTIONS ARE SAME
+
+class Solution {
+  public static void main(String[] args) {
+    
+    String str1 = "AnagramMALA";
+    String str2 = "nag-a-ram";
+    
+    
+    System.out.println("Is string 2 an anagram of string1 :"+ isAnagram(str1,str2));
+    
+  }
+  
+  public static boolean isAnagram(String str1, String str2){
+   
+    
+    String string1 = str1.toLowerCase();
+    //regex to remove all the characters that are not alphabet
+    String string2 = str2.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    
+   if(string2.length() > str1.length()){
+     return false;
+   }
+    
+    char [] string2charArr = string2.toCharArray();
+    //make string 1 mutable 
+    StringBuffer sbString1 = new StringBuffer(string1);
+    
+    for(char ch : string2charArr){
+      //convert the char to string
+      int index = sbString1.indexOf(""+ch);
+      if(index != -1){
+        
+        sbString1.deleteCharAt(index);
+      } 
+      else {
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
