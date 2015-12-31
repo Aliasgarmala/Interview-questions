@@ -77,3 +77,44 @@ class Solution {
     
   }
 }
+
+
+// Recursive approach
+
+class Solution {
+  
+  public static void print(int n){
+   
+    for(int i = 0; i < n; i++){
+      // it's j <= here
+      for(int j = 0; j <= i; j++){
+        
+        System.out.print(pascal(i, j) + " ");
+        
+      }
+      
+      System.out.println();
+    }
+    
+  }
+  
+  
+  public static int pascal(int i, int j){
+    //first element 'j it is'
+    if(j == 0){
+      return 1;
+    }
+    //last element
+    if(i == j){
+      return 1;
+    }
+    //sum of previous j-1 + j
+    return pascal(i-1, j-1) + pascal(i-1, j);
+  }
+  
+  public static void main(String[] args) {
+    
+    print(8);
+    
+  }
+}
