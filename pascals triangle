@@ -114,3 +114,55 @@ class Solution {
     
   }
 }
+
+
+// using arrayList 
+
+
+
+class Solution {
+  
+  public static void nthPascalRow(int rowNum){
+  
+   List<Integer> list = new ArrayList<Integer>();
+    //define the obvious case of rowNum:1
+    if(rowNum == 1){
+     list.add(1);
+      
+    }
+  
+    
+    for(int row = 2; row <= rowNum; row++){
+      
+      List<Integer> tempList = new ArrayList<Integer>(row);
+      //first element of any row is always 1
+      tempList.add(1);
+      
+      //leave first and last element from  the loop
+      for(int column = 1; column < (row -1); column++){
+        //current index = previousIndex -1 + previousIndex
+        tempList.add(list.get(column -1) + list.get(column));
+      }
+      
+      //last element of any row is always 1
+      tempList.add(1);
+      
+      //assign for previous list
+      list = tempList;
+      
+      
+      
+    }
+     //print arraylist as array without loop
+     System.out.println(list);
+  }
+  
+  public static void main(String[] args) {
+    
+    for(int i  = 1; i <= 10; i++){
+      nthPascalRow(i);
+      
+    }
+    
+  }
+}
