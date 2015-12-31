@@ -30,7 +30,7 @@ class Solution {
     }
     
     
-    //for each row you have to start with rowNum 2 as previous
+    //for each row you have to start with rowNum 1 as previous
     int [] previous = {1};
     
     for(int row = 2; row <= rowNum; row++){
