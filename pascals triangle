@@ -29,16 +29,11 @@ class Solution {
       return result;
     }
     
-     //define the obvious case of rowNum:2
-    if(rowNum == 2){
-       int [] result = {1,1};
-      return result;
-    }
     
     //for each row you have to start with rowNum 2 as previous
-    int [] previous = {1,1};
+    int [] previous = {1};
     
-    for(int row = 3; row <= rowNum; row++){
+    for(int row = 2; row <= rowNum; row++){
       
       //size is as the row number
       int [] next = new int[row];
@@ -47,6 +42,7 @@ class Solution {
       next[0] = 1;
       
       //leave first and last element from  the loop
+      //for row 2 it won't enter this loop
       for(int column= 1; column < (row -1); column++){
         //current index = previousIndex -1 + previousIndex
         next[column] = previous[column -1] + previous[column];
