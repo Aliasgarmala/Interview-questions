@@ -29,6 +29,50 @@ class Solution {
       
     }
     
+    Here the time and space complexity is O(n)
+    
+    Below code does inline changes.
+    So, therefore the space complexity is O(1) and time complexity O(n)
+
+
+
+class Solution {
+  static  int [] arr = {1,2,3,4,5,6,7};
+  public static void rotate(int [] arr, int order){
+    //always check the common failure condition first
+    if(arr == null || order < 0){
+      throw new IllegalArgumentException("Illegal Argument Provided");
+    }
+    
+    //length of the first part
+    int a = arr.length - order;
+    
+    reverse(arr, 0, a -1);  
+    reverse(arr, a, arr.length -1);
+    reverse(arr, 0, arr.length -1);
+  }
+  // reverse the array in place
+  public static void reverse(int [] arr, int left, int right){
+    if(arr == null || arr.length == 1)
+      return;
+    
+    while(left < right){
+      int temp = arr[left];
+      arr[left] = arr[right];
+      arr[right] = temp;
+      
+      left++;
+      right--;
+      
+    }
+  }
+  public static void main(String[] args) {
+  
+    rotate(arr, 3);
+    //print an array
+    System.out.println(Arrays.toString(arr));
+  }
+}
     
     for(int i = 0; i < reverse.length; i++){
       System.out.print(reverse[i]);
