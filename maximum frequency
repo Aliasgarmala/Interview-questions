@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+/*
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times. (assume that the array is non-empty and the majority element always exist in the array.)
+ * Since the majority always take more than a half space, the middle element is guaranteed to be the majority. Sorting array takes nlog(n). So the time complexity of this solution is nlog(n). 
+ */
+
+
+public class Solution {
+  //this O(nlogn)
+   public int majorityElement(int[] num) {
+      if (num.length == 1) {
+        return num[0];
+      }
+
+      Arrays.sort(num);
+      return num[num.length / 2];
+    }
+  
+  
+  
+  // this O(n)
+  public int majorityElement(int[] num) {
+    int counter = 0, result = 0;
+    
+    for(int i = 1; i < num.length; i++){
+      
+      if(count == 0){
+        result = num[i];
+        count++;
+      } else if (result == num[i]){
+        count++;
+      } else {
+        //since the count of the max item will be always greater than 1
+        count--;
+      }
+    }
+    
+    return result;
+  }
+ 
+}
