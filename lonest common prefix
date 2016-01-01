@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ *Write a function to find the longest common prefix string amongst an array of strings.
+ */
+
+class Solution {
+  
+  public static String getCommonPrefix(String[] strings) {
+    if ((null == strings) || (strings.length == 0)) {
+        return "";
+    } else if (strings.length == 1) {
+        return strings[0];
+    }
+
+    for (int i = 0; i < strings[0].length(); i++) {
+        for (int j = 1; j < strings.length; j++) {
+         
+            if ((strings[0].charAt(i) != strings[j].charAt(i) )) {
+                
+                return strings[0].substring(0, i);
+            }
+        }
+    }
+
+    return "";
+}
+  public static void main(String[] args) {
+    
+    String [] prefix = {"Mary Had a Bad Day", "Mary Had a Big Lamb", "Mary Had a ittle"};
+    
+    System.out.println(getCommonPrefix(prefix));
+    //Mary Had a 
+  }
+}
