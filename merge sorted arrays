@@ -51,3 +51,48 @@ import java.util.*;
   }
  
 }
+
+
+
+// when third array is available
+
+
+public class Solution {
+
+  public static void main(String[] args) {
+    
+    int [] A = {1,2,4,8,15};
+    int [] B = {2,3,4,5};
+   
+    int [] result = new int[A.length+B.length];
+    int i = 0, j = 0, k = 0;
+    while( i < A.length && j < B.length){
+      
+      if(A[i] < B[j]){
+        result[k] = A[i];
+        i++;
+      } else {
+        result[k] = B[j];
+        j++;
+      }
+      k++;
+    }
+    
+    while( i < A.length){
+      result[k] = A[i];
+      i++;
+      k++;
+    }
+    
+    while( j < B.length){
+      result[k] = B[j];
+      j++;
+      k++;
+    }
+
+    System.out.print(Arrays.toString(result));
+
+      
+  }
+ 
+}
