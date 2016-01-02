@@ -1,0 +1,31 @@
+    public static reverse(Node ptr){
+     Node ptr,ptr1,prev;
+      //base condition when using 2 pointers
+      prev = null;
+      ptr = start;
+
+      while(ptr != null){
+
+        ptr1 = ptr.next;
+        ptr.next = prev;
+        prev = ptr;
+        ptr = ptr1;
+      }
+      //very imporatant not ptr but prev
+     start = prev
+  }
+  
+  
+  
+  class Node{
+  int data;
+  Node next;
+  
+  Node(){}
+  
+  Node(int x){
+    data = x;
+    next = null;
+  }
+}
+  
