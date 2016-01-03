@@ -1,0 +1,36 @@
+//Implement an algorithm to find the kth to last element of a singly linked list.
+
+
+/*
+ A more optimal, but less straightforward, solution is to implement this iteratively. We can
+use two pointers, pi and p2. We place them k nodes apart in the linked list by putting pi
+at the beginning and moving p2 k nodes into the list. Then, when we move them at the
+same pace, p2 will hit the end of the linked list after LENGTH - k steps. At that point, pi
+will be LENGTH - k nodes into the list, or k nodes from the end.
+ */
+
+Node nthtoLast(Node start, int k){
+    
+    Node p1 = start;
+    Node p2 = null;
+    
+    
+    for(int i = 0; i < k; i++){
+      
+      if(p2.next != null)
+        p2 = p2 .next;
+      
+    }
+    
+    if(p2 == null)
+      //element not found
+      
+     while(p2.next != null){
+       p2 = p2.next;
+       p1 = p1.next;
+     } 
+    
+    retrun p1
+  }
+  
+  //time complexity is O(n), space complexity O(1)
