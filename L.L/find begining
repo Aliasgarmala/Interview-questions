@@ -1,0 +1,47 @@
+//Given a circular linked list, implement an algorithm which returns the node at the
+//beginning of the loop.
+/*
+1. Create two pointers, FastPointer and SlowPointer.
+2. Move FastPointer at a rate of 2 steps and SlowPointer at a rate of 1 step.
+3. When they collide, move SlowPointer to LinkedListHead. Keep FastPointer where it is.
+4. Move SlowPointer and FastPointer at a rate of one step. Return the new collision
+point
+
+ */
+
+public Node findBegining(Node start, int k){
+    
+    Node fast = start;
+    Node slow = start;
+    
+    
+    while( fast != null && fast.next != null){
+      //move one node
+      slow = slow.next;
+      //move 2 nodes
+      fast = fast.next.next;
+      
+      if(slow == fast)
+       break;
+    }
+    
+   if (fast == null || fast.next == null) {
+     return null;
+  }
+// don't really understand how it works but remember the steps
+
+   /* Move slow to Head. Keep fast at Meeting Point. Each are k
+   * steps from the Loop Start. If they move at the same pace,
+   * they must meet at Loop Start. */
+   slow = head;
+   while (slow != fast) {
+    slow = slow.next;
+    fast = fast.next;
+   }
+
+   /* Both now point to the start of the loop. */
+   return fast;
+    
+    
+  }
+  
