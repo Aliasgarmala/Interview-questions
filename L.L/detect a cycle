@@ -1,0 +1,24 @@
+ //Given a linked list, determine if it has a cycle in it.
+/*
+If we have 2 pointers - fast and slow. It is guaranteed that the fast one will meet the slow one if there exists a circle.
+
+ */
+ 
+ public boolean hasCycle(Node start, int k){
+    
+    Node fast = start;
+    Node slow = start;
+    
+    
+    while( fast != null && fast.next != null){
+      //move one node
+      slow = slow.next;
+      //move 2 nodes
+      fast = fast.next.next;
+      
+      if(slow == fast)
+        return true;
+    }
+    
+    return false;
+  }
