@@ -1,0 +1,20 @@
+By default, the system uses the Bundle instance state to save information about each View object when the activity is destroyed 
+and recreated.
+To save additional data about the activity state, you must override the onSaveInstanceState() callback and onRestoreInstanceState() 
+
+Implict vs explicit intent
+Implicit intents do not declare the class name of the component to start, but instead declare an action to perform
+
+To allow other apps to start your activity, you need to add an <intent-filter> element in your manifest file for the corresponding
+<activity> element with <action>, <data> and <category>(which is normally defualt) element
+setResult()  and startActivityForResult() if you want a result from the activity
+
+
+Beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running, not when they install the app
+System permissions are divided into two categories, normal and dangerous:Dangerous permissions can give the app access to the user's 
+confidential data.
+
+Best practice for runtime permission
+You can explicitly ask permission to get the full control of the app you're using but this will add complexity as you have design the UI. 
+if the user doesn't grant the permission (or revokes it later on), your app becomes unable to perform the operation at all.
+Quite often your app can avoid requesting a permission by using an intent instead
