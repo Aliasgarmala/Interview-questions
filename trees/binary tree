@@ -1,0 +1,28 @@
+Max # of nodes on i th level  = 2^i;
+
+Max # of nodes in the tree(complete binary tree) 2^(i+1) - 1
+
+if i is the index of the node then it's left child will be at (2i+1) & the rigth child will be at (2i+2)
+and its parent will be at (i-1)/2
+
+tress are used since it can be traversed in many ways, not like arrays
+preOrder(DLR)
+inOrder(LDR)
+postOrder(LRD)
+where D is visiting the node
+
+the way these traversal works eg preOrder 
+Step1) visit the node (break, start again)
+Step2) that node is visited in step1 so move to the left(break, start all over again)
+Step2) so print the node in step2 (because that's the step1 in a new iteration)
+
+void preOrder(Node root){
+
+  if(root != null){
+    
+    System.out.println(root.data);
+    preOrder(root.left);
+    preOrder(root.rigth);
+    
+  }
+}
