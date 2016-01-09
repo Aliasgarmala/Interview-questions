@@ -1,0 +1,78 @@
+import java.io.*;
+import java.util.*;
+
+/*
+ * Find an index in an array such that its prefix sum equals its suffix sum.
+ P = 1 is an equilibrium index of this array, because:
+
+A[0] = −1 = A[2] + A[3] + A[4] + A[5] + A[6] + A[7]
+ */
+
+
+// this takes O(n * n)
+
+
+int equilibrium(int arr[], int n)
+{
+  int i, j;
+  int leftsum, rightsum;
+ 
+  /* Check for indexes one by one until an equilibrium
+    index is found */
+  for ( i = 0; i < n; ++i)
+  {
+    leftsum = 0;  // initialize left sum for current index i
+    rightsum = 0; // initialize right sum for current index i
+ 
+    /* get left sum */
+    for ( j = 0; j < i; j++)
+      leftsum  += arr[j];
+ 
+    /* get right sum */
+    for( j = i+1; j < n; j++)
+      rightsum += arr[j];
+ 
+    /* if leftsum and rightsum are same, then we are done */
+    if (leftsum == rightsum)
+      return i;
+    }
+ 
+  /* return -1 if no equilibrium index is found */
+  return -1;
+}
+
+
+
+
+
+//this takes O(n)
+class Solution {
+  public static void main(String[] args) {
+   
+    int a [] = {-7, 1, 5, 2, -4, 3, 0};
+    System.out.println("Equilibrium index is: "+equilibrium(a));
+  }
+  
+  public static int equilibrium(int [] a){
+    int sum = 0;
+    int leftsum = 0;
+    
+    for(int i = 0; i < a.length; i++){
+      sum += a[i];
+    }
+    
+    for(int i = 0; i < a.length; i++){
+      
+      //subtract the p value
+      sum -= a[i]; //this becomes rigth sum
+      
+      if(sum == leftsum)
+        return i;
+        
+        leftsum += a[i];
+    }
+    
+    return -1;
+    
+  }
+}
