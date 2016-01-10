@@ -1,4 +1,4 @@
-    public static reverse(Node ptr){
+    public static reverse(Node start){
      Node ptr,ptr1,prev;
       //base condition when using 2 pointers
       prev = null;
@@ -12,10 +12,11 @@
         ptr = ptr1;
       }
       //very imporatant not ptr but prev
+      //put the start at the end of the list
      start = prev
   }
   
-  
+  //now print the L.L
   
   class Node{
   int data;
@@ -29,3 +30,16 @@
   }
 }
   
+
+
+// recursive solution
+//much easier to implent without reversing the L.L and prints the L.L in reverse order
+
+public static void reverse(Node start){
+
+    while (start != null){
+        reverse(start.next);
+        System.out.println(start.data+ " ");
+    
+    }
+}
