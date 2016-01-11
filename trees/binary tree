@@ -85,6 +85,7 @@ class Solution {
     System.out.println("leaf count: "+ leafcount(root));
     System.out.println("heigth of the tree: "+height(root));
     System.out.println("# of nodes in the tree: "+nodecount(root));
+    System.out.println("# of visible nodes in the tree: "+countVisible(root));
    
     
   }
@@ -152,7 +153,7 @@ class Solution {
     
     // you are at the leaf node 
     if(root.left == null && root.rigth == null){
-      System.out.println("leaf node: "+ root.data);
+      //System.out.println("leaf node: "+ root.data);
       return 1;
     }
     
@@ -194,6 +195,34 @@ class Solution {
     //add height of the left + height of the right sub tree
     return 1 + l + r;
   }
+  
+  /* In a binary tree, if in the path from the root to the node A, there is no
+ * node with value greater than A's value, then A is a visible node. We need 
+ * to count the number of visible nodes in a binary tree.
+ * root node is included in this
+ */
+  public static int countVisible(TreeNode root){
+            //Integer.MIN_VALUE is the lowest possible int 
+            //helper because we don't want to initiliaze max value everytime
+            //only first time we give the value
+    return helper(root, Integer.MIN_VALUE);
+  }
+  
+  
+  private static int helper(TreeNode root, int prevmax){
+    
+    if(root == null)
+      return 0;
+    
+    int newmax = Math.max(prevmax, root.data);
+    //prevmax not newmax
+    if(prevmax < root.data){
+      //System.out.println(root.data);
+      return 1 + helper(root.left, newmax) + helper(root.rigth, newmax);
+    } 
+    else {
+      return helper(root.left, newmax) + helper(root.rigth, newmax);
+    }
 }
 
 
