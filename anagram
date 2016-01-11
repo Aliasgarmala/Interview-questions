@@ -3,7 +3,8 @@ import java.util.*;
 
 /*
  * Checking Anagram 
- * An anagram is a type of word, the result of rearranging the letters of a word or phrase to produce a new word or phrase, using all the original letters exactly once
+ * An anagram is a type of word, the result of rearranging the letters of a word or phrase to produce a new word or phrase,
+ *using all the original letters exactly once
  * eg:str1: anagram
  * str2: nag-a-ram
  * return true
