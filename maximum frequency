@@ -2,8 +2,10 @@ import java.io.*;
 import java.util.*;
 
 /*
-Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times. (assume that the array is non-empty and the majority element always exist in the array.)
- * Since the majority always take more than a half space, the middle element is guaranteed to be the majority. Sorting array takes nlog(n). So the time complexity of this solution is nlog(n). 
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+*(assume that the array is non-empty and the majority element always exist in the array.)
+ * Since the majority always take more than a half space, the middle element is guaranteed to be the majority.
+ *Sorting array takes nlog(n). So the time complexity of this solution is nlog(n). 
  */
 
 
