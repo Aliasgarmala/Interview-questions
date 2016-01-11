@@ -36,30 +36,21 @@ class Solution {
 // here the complexity is O(n2);
 improve the complexity
 
-Using hash map the complexity is O(n)
 class Solution {
   public static void main(String[] args) {
     
     
-    Integer [] arr = {2,45,7,3,5,1,8,9};
+    Integer [] arr = {2,5,45,7,3,5,1,8,9};
     Integer sum = 10;
     
-    HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
-    
-    for(int i = 0 ; i < arr.length; i++){
-      hmap.put(arr[i], i);
-    }
-    
-    
-    for(int i = 0 ; i < arr.length; i++){
-      Integer complement = sum - arr[i];
-      
-      if(hmap.containsKey( complement )){
-        System.out.println("i "+ i +" j "+hmap.get(complement));
-      }
+   HashSet<Integer> set = new HashSet<Integer>();
+    for (int num : arr) {
+        if (set.contains(sum - num)) {
+            String s = num + ", " + (sum - num);
+            System.out.println(s);
+        }
+        set.add(num);
     }
    
   }
 }
-
-Note: if there are duplicates you have to write a condition and search if there are 2 occurennce TBD
