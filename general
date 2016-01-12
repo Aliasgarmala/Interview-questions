@@ -1,0 +1,9 @@
+Integer to different formats
+
+int x = 100;
+System.out.println(Integer.toBinaryString(x));
+Integer.toString(100,8) // prints 144 --octal representation
+
+Integer.toString(100,2) // prints 1100100 --binary representation
+
+Integer.toString(100,16) //prints 64 --Hex representation
