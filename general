@@ -9,3 +9,6 @@ Integer.toString(100,2) // prints 1100100 --binary representation
 Integer.toString(100,16) //prints 64 --Hex representation
 
 HashSet doesn't have a get method. So, if you want to do a get do contains and if true then i.e the get method
+
+String.valueOf(sum - 2) // convert int to string
+Integer.parseInt(string) // convert string to int
