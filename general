@@ -12,3 +12,5 @@ HashSet doesn't have a get method. So, if you want to do a get do contains and i
 
 String.valueOf(sum - 2) // convert int to string
 Integer.parseInt(string) // convert string to int
+
+Arrays.asList(arr) // converting arrays as list (in arraylist or L.L)
