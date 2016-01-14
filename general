@@ -14,3 +14,5 @@ String.valueOf(sum - 2) // convert int to string
 Integer.parseInt(string) // convert string to int
 
 Arrays.asList(arr) // converting arrays as list (in arraylist or L.L)
+
+System.out.println(Arrays.toString(arr)); // to directly print the array
