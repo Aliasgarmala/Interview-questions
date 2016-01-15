@@ -18,4 +18,6 @@ Arrays.asList(arr) // converting arrays as list (in arraylist or L.L)
 System.out.println(Arrays.toString(arr)); // to directly print the array
 
 String str = str1.replaceAll("\\s+",""); //remove all the whitespaces
+
+In string questions see if you can split the words using spaces and make an array and then solve it
  
