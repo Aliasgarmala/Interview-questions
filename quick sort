@@ -1,0 +1,58 @@
+
+class Solution {
+  public static void main(String[] args) {
+    
+    Random r = new Random();
+    int[] integers = new int[10];
+    
+    for (int i = 0; i < integers.length; i++) {
+      integers[i] = r.nextInt(Integer.SIZE - 1);
+    }
+    
+    for(int a: integers)
+      System.out.print(a+",");
+    
+     System.out.println();
+    
+    quickSort(integers, 0, integers.length - 1);
+    
+    for(int a: integers)
+      System.out.print(a+",");
+    
+  }
+  
+  public static void quickSort(int[] arr, int low, int high) {
+    
+ 
+    if (low >= high)
+      return;
+   
+    int pivot = arr[(low + high) / 2];
+    int i = low, j = high;
+    
+    while (i <= j) {
+      
+      while (arr[i] < pivot)
+        i++;
+ 
+      while (arr[j] > pivot)
+        j--;
+      
+ 
+      if (i <= j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+      }
+    }
+ 
+    // recursively sort two sub arrays
+    if (low < j)
+      quickSort(arr, low, j);
+ 
+    if (high > i)
+      quickSort(arr, i, high);
+  }
+}
