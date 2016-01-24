@@ -1,6 +1,6 @@
  //Given a linked list, determine if it has a cycle in it.
 /*
-If we have 2 pointers - fast and slow. It is guaranteed that the fast one will meet the slow one if there exists a circle.
+If we have 2 pointers - fast and slow. It is guaranteed that the fast one will meet the slow one if there exists a cycle.
 
  */
  
@@ -9,7 +9,7 @@ If we have 2 pointers - fast and slow. It is guaranteed that the fast one will m
     Node fast = start;
     Node slow = start;
     
-    
+    //this condition is important
     while( fast != null && fast.next != null){
       //move one node
       slow = slow.next;
