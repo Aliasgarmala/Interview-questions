@@ -1,0 +1,99 @@
+METHOD 1 (Use a Stack)
+A simple solution is to use a stack of list nodes. This mainly involves three steps.
+1) Traverse the given list from head to tail and push every visited node to stack.
+2) Traverse the list again. For every visited node, pop a node from stack and compare data of popped node with currently visited node.
+3) If all nodes matched, then return true, else false.
+
+Time complexity of above method is O(n), but it requires O(n) extra space. Following methods solve this with constant extra space.
+
+Time complexity of above method is O(n) space complexity O(1)
+import java.io.*;
+import java.util.*;
+
+/*
+ * We can use a fast and slow pointer to get the center of the list, then reverse the second list and compare two sublists.
+ The time is O(n) and space is O(1).
+ */
+class Node{
+    
+    char data;
+    Node next;
+    
+    Node(char d){
+      data = d;
+      next = null;
+    }
+  }
+
+class Solution{
+  
+  public static void main(String args []){
+   //important way to create nodes
+    Node start = new Node('b');
+    start.next = new Node('a');
+    start.next.next = new Node('m');
+    //start.next.next.next = new Node('m');
+    start.next.next.next = new Node('a');
+    start.next.next.next.next = new Node('b');
+    
+    System.out.println("Is the L.L palindrome: "+ isPalindrome(start));
+    
+    
+  }
+  
+  
+
+  public static boolean isPalindrome(Node root){
+
+    if(root == null || root.next == null)
+      return true;
+
+    Node slow = root;
+    Node fast = root;
+
+    //it's not while(fast != null && fast.next != null)
+    while(fast.next != null && fast.next.next != null){
+
+      fast = fast.next.next;
+      slow = slow.next;
+
+    }
+
+    //important steps
+    Node secondroot = slow.next;
+    slow.next = null;
+
+
+    //reverse the second part of the list
+    Node prev = null;
+    Node ptr = secondroot;
+    Node temp = null;
+
+    while(ptr != null){
+      temp = ptr.next;
+      ptr.next = prev;
+      prev = ptr;
+      ptr = temp;
+
+    }
+
+    secondroot =  prev;
+    Node first = root;
+    Node second = secondroot;
+    //compare second list that is small and this will work for the odd length of string
+    while(second != null){
+
+        System.out.println("first.data: "+first.data+" second.data: "+second.data);
+      if(first.data == second.data){
+        first = first.next;
+        second = second.next;
+      } 
+      else {
+        return false;
+      }
+
+    }
+
+    return true;
+   }
+}
