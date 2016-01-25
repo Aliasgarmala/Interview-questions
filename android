@@ -15,10 +15,18 @@ System permissions are divided into two categories, normal and dangerous:Dangero
 confidential data.
 
 Best practice for runtime permission
-You can explicitly ask permission to get the full control of the app you're using but this will add complexity as you have design the UI. 
-if the user doesn't grant the permission (or revokes it later on), your app becomes unable to perform the operation at all.
+You can explicitly ask permission to get the full control of the app you're using but this will add complexity as you have design the
+UI. if the user doesn't grant the permission (or revokes it later on), your app becomes unable to perform the operation at all.
 Quite often your app can avoid requesting a permission by using an intent instead
 
 
 
 API 15: Android 4.0.3 (IceCreamSandwich) this cover approx 94.0% of devices that are active on google play store
+You get this info when you create the new app in android studio.
+
+How to make app for different screen sizes?
+1. Always use dp (density independent pixels )units the base for this is medium density screen. for low & high the system scales
+2. Provide alternative bit map resources for different densities.  Place all your launcher icons in the res/mipmap-[density]/ folders,
+rather than the res/drawable-[density]/ folders. the resources in drawable/ are the default drawable resources. you can also provide 
+orientation qualifier
+3. provide different layouts for different screen sizes
