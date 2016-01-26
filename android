@@ -30,3 +30,8 @@ How to make app for different screen sizes?
 rather than the res/drawable-[density]/ folders. the resources in drawable/ are the default drawable resources. you can also provide 
 orientation qualifier
 3. provide different layouts for different screen sizes
+
+To add support for more languages, create additional values directories inside res/ that include a hyphen 
+and the ISO language code at the end of the directory name.For example, values-es/. Android loads the appropriate resources according to the 
+locale settings of the device at run time.
+To add support for more languages, create additional values directories inside res/ that include a hyphen and the ISO language code at the end of the directory name
