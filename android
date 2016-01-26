@@ -32,6 +32,9 @@ orientation qualifier
 3. provide different layouts for different screen sizes
 
 To add support for more languages, create additional values directories inside res/ that include a hyphen 
-and the ISO language code at the end of the directory name.For example, values-es/. Android loads the appropriate resources according to the 
-locale settings of the device at run time.
-To add support for more languages, create additional values directories inside res/ that include a hyphen and the ISO language code at the end of the directory name
+and the ISO language code at the end of the directory name.For example, values-es/. 
+Android loads the appropriate resources according to the locale settings of the device at run time.
+To add support for more languages, create additional values directories inside res/ that include a
+hyphen and the ISO language code at the end of the directory name
+
+Sample-webrtc-web which is the SDK with QuickBlox use for video conferrencing 
