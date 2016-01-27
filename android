@@ -55,6 +55,7 @@ multi-threading, which is intrinsic in the Java language.
 The Dalvik VM enables every Android application to run in its own process, with its own instance of the Dalvik virtual machine.
 1. Application Framework: The Application Framework layer provides many higher-level services to applications in the form of 
 Java classes
-Applications: You will find all the Android application at the top layer. You will write your application to be installed on this layer only
+Applications: You will find all the Android application at the top layer. You will write your 
+application to be installed on this layer only
 
 
