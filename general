@@ -20,4 +20,6 @@ System.out.println(Arrays.toString(arr)); // to directly print the array
 String str = str1.replaceAll("\\s+",""); //remove all the whitespaces
 
 In string questions see if you can split the words using spaces and make an array and then solve it
+
+Immutable classes are simpler and more efficient i.e. have less # of setters
  
