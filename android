@@ -44,7 +44,7 @@ Traceview tool to check the bottlenecks in the code and how much time a function
 Android operating system is a stack of software components which is roughly divided into five sections and 
 four main layers.
 
-Architecture of anfroid: 
+Architecture of android: 
 5:Linux kernel: This provides a level of abstraction between the device hardware and it contains all the 
 essential hardware drivers like camera, keypad, display etc. 
 4: Libraries: SQLite database, SSL libraries responsible for Internet security
