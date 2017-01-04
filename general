@@ -27,3 +27,5 @@ https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.ht
 How should fragments communicate with each other
 https://developer.android.com/training/basics/fragments/communicating.html#DefineInterface
 
+http://stackoverflow.com/questions/25119090/difference-between-oncreateview-and-onviewcreated-in-fragment
+answer 4th
