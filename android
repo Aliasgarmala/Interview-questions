@@ -58,4 +58,7 @@ Java classes
 Applications: You will find all the Android application at the top layer. You will write your 
 application to be installed on this layer only
 
+Use tape library in android to upload images in the queue even when the network is flaky.
+Try pressure testing your app by closing the process.
+
 
