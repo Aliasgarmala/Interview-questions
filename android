@@ -71,5 +71,7 @@ Try pressure testing your app by closing the process.
 
 The Application class, or any subclass of the Application class, is instantiated before any other class when the 
 process for your application/package is created.
+uses of subclass of application
+Global initialization that needs to be shared across all components (crash reporting, persistence)
 
 
