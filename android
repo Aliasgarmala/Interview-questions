@@ -1,22 +1,27 @@
-By default, the system uses the Bundle instance state to save information about each View object when the activity is destroyed 
-and recreated.
-To save additional data about the activity state, you must override the onSaveInstanceState() callback and onRestoreInstanceState() 
+By default, the system uses the Bundle instance state to save information about each View object when
+the activity is destroyed and recreated.
+To save additional data about the activity state, you must override the onSaveInstanceState() callback and
+onRestoreInstanceState() 
 
 Implict vs explicit intent
 Implicit intents do not declare the class name of the component to start, but instead declare an action to perform
 
-To allow other apps to start your activity, you need to add an <intent-filter> element in your manifest file for the corresponding
-<activity> element with <action>, <data> and <category>(which is normally defualt) element
+To allow other apps to start your activity, you need to add an <intent-filter> element in
+your manifest file for the corresponding <activity> element with <action>, <data> and <category>
+(which is normally defualt) element
 setResult()  and startActivityForResult() if you want a result from the activity
 
 
-Beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running, not when they install the app
-System permissions are divided into two categories, normal and dangerous:Dangerous permissions can give the app access to the user's 
+Beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running,
+not when they install the app System permissions are divided into two categories,
+normal and dangerous:Dangerous permissions can give the app access to the user's 
 confidential data.
 
 Best practice for runtime permission
-You can explicitly ask permission to get the full control of the app you're using but this will add complexity as you have design the
-UI. if the user doesn't grant the permission (or revokes it later on), your app becomes unable to perform the operation at all.
+You can explicitly ask permission to get the full control of the app you're using but this will add 
+complexity as you have design the
+UI. if the user doesn't grant the permission (or revokes it later on), your app becomes unable to 
+perform the operation at all.
 Quite often your app can avoid requesting a permission by using an intent instead
 
 
@@ -25,10 +30,12 @@ API 15: Android 4.0.3 (IceCreamSandwich) this cover approx 94.0% of devices that
 You get this info when you create the new app in android studio.
 
 How to make app for different screen sizes?
-1. Always use dp (density independent pixels )units the base for this is medium density screen. for low & high the system scales
-2. Provide alternative bit map resources for different densities.  Place all your launcher icons in the res/mipmap-[density]/ folders,
-rather than the res/drawable-[density]/ folders. the resources in drawable/ are the default drawable resources. you can also provide 
-orientation qualifier
+1. Always use dp (density independent pixels )units the base for this is medium density screen. 
+for low & high the system scales
+2. Provide alternative bit map resources for different densities. 
+Place all your launcher icons in the res/mipmap-[density]/ folders,
+rather than the res/drawable-[density]/ folders. 
+the resources in drawable/ are the default drawable resources. you can also provide orientation qualifier
 3. provide different layouts for different screen sizes
 
 To add support for more languages, create additional values directories inside res/ that include a hyphen 
@@ -60,5 +67,9 @@ application to be installed on this layer only
 
 Use tape library in android to upload images in the queue even when the network is flaky.
 Try pressure testing your app by closing the process.
+
+
+The Application class, or any subclass of the Application class, is instantiated before any other class when the 
+process for your application/package is created.
 
 
