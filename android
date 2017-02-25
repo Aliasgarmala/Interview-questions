@@ -4,7 +4,8 @@ To save additional data about the activity state, you must override the onSaveIn
 onRestoreInstanceState() 
 
 Implict vs explicit intent
-Implicit intents do not declare the class name of the component to start, but instead declare an action to perform
+Implicit intents do not declare the class name of the component to start, but instead declare an action to perform.
+For eg: you will need and intentchooser or intent picker to and set the type of the app you are targeting
 
 To allow other apps to start your activity, you need to add an <intent-filter> element in
 your manifest file for the corresponding <activity> element with <action>, <data> and <category>
