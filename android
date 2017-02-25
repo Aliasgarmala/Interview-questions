@@ -7,11 +7,13 @@ Implict vs explicit intent
 Implicit intents do not declare the class name of the component to start, but instead declare an action to perform.
 For eg: you will need and intentchooser or intent picker to and set the type of the app you are targeting
 
+To advertise which implicit intents your app can receive, declare one or more intent filters for each of your app
+components with an <intent-filter> element in your manifest file.
+
 To allow other apps to start your activity, you need to add an <intent-filter> element in
 your manifest file for the corresponding <activity> element with <action>, <data> and <category>
 (which is normally defualt) element
 setResult()  and startActivityForResult() if you want a result from the activity
-
 
 Beginning in Android 6.0 (API level 23), users grant permissions to apps while the app is running,
 not when they install the app System permissions are divided into two categories,
