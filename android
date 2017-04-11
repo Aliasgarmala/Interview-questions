@@ -89,3 +89,6 @@ Leaving a service running when it’s not needed is one of the worst memory-mana
 not to use enums 
 
 
+Read about View.onMeasure() and View.onLayout()
+
+
