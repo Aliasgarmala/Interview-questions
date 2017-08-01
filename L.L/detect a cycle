@@ -4,6 +4,17 @@ If we have 2 pointers - fast and slow. It is guaranteed that the fast one will m
 
  */
  
+ class Node{
+    
+    char data;
+    Node next;
+    
+    Node(char d){
+      data = d;
+      next = null;
+    }
+  }
+ 
  public boolean hasCycle(Node start, int k){
     
     Node fast = start;
