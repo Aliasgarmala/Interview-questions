@@ -27,73 +27,28 @@ class Node{
 
 class Solution{
   
-  public static void main(String args []){
-   //important way to create nodes
-    Node start = new Node('b');
-    start.next = new Node('a');
-    start.next.next = new Node('m');
-    //start.next.next.next = new Node('m');
-    start.next.next.next = new Node('a');
-    start.next.next.next.next = new Node('b');
-    
-    System.out.println("Is the L.L palindrome: "+ isPalindrome(start));
-    
-    
-  }
-  
-  
+ class Foo{
+	public static void main(String args[]) {
+		char[] words = {'m','m','a','a','m', 'm'};
+		System.out.println("isPalindrome "+isPalindrome(words));
+	}
+	
+	public static boolean isPalindrome(char[] words) {
+	
+		int i = 0;
+		int j = words.length -1;
+	
+		while(j>i) {
+			if(words[i] != words[j])
+			return false;
+			
+			j--;
+			i++;
+		}
+		
+		return true;
+	}
+}
 
-  public static boolean isPalindrome(Node root){
-
-    if(root == null || root.next == null)
-      return true;
-
-    Node slow = root;
-    Node fast = root;
-
-    //it's not while(fast != null && fast.next != null)
-    while(fast.next != null && fast.next.next != null){
-
-      fast = fast.next.next;
-      slow = slow.next;
-
-    }
-
-    //important steps
-    Node secondroot = slow.next;
-    slow.next = null;
-
-
-    //reverse the second part of the list
-    Node prev = null;
-    Node ptr = secondroot;
-    Node temp = null;
-
-    while(ptr != null){
-      temp = ptr.next;
-      ptr.next = prev;
-      prev = ptr;
-      ptr = temp;
-
-    }
-
-    secondroot =  prev;
-    Node first = root;
-    Node second = secondroot;
-    //compare second list that is small and this will work for the odd length of string
-    while(second != null){
-
-        System.out.println("first.data: "+first.data+" second.data: "+second.data);
-      if(first.data == second.data){
-        first = first.next;
-        second = second.next;
-      } 
-      else {
-        return false;
-      }
-
-    }
-
-    return true;
-   }
+ 
 }
