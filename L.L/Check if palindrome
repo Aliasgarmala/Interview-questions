@@ -14,16 +14,7 @@ import java.util.*;
  * We can use a fast and slow pointer to get the center of the list, then reverse the second list and compare two sublists.
  The time is O(n) and space is O(1).
  */
-class Node{
-    
-    char data;
-    Node next;
-    
-    Node(char d){
-      data = d;
-      next = null;
-    }
-  }
+
 
 class Solution{
   
