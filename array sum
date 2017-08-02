@@ -4,9 +4,7 @@
 
 class Solution {
   public static void main(String[] args) {
-    
-    String str1  = "aliasgarmala";
-       
+           
     int[] numbers = {1,2,8,9};
     findIndex(numbers);
     
