@@ -91,4 +91,11 @@ not to use enums
 
 Read about View.onMeasure() and View.onLayout()
 
+https://www.tutorialspoint.com/android/android_application_components.htm
+
+what happend on device orientation 
+call one class from another class 
+Serialiazable and parcelable 
+concurrent programming in android, race condition example, RxJava, caching in android, MVP vs MVVM
+
 
