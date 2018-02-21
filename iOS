@@ -1,1 +1,14 @@
-first commit
+The memory that we manage in the app is the RAM memory
+by default the type is strong, weak does not increase reference count.
+
+"There is no such thing as weak let. When you use weak,
+the property should be optional and mutable in order to set it as nil or assign value to the delegate property.
+Consequently, let is not allowed."
+
+In Classes, when you make a copy of a variable,(var a = new A() & b = a) both variables are referring to the
+same object in memory.A change to one of the variables will change the other (Reference Type).
+In Structs, however, you simply copy and paste variables by creating a separate object (Value Type)
+
+response coming from background thread (asynchronous/ @escaping method) should run on main thread DispatchQueue.main.async
+
+
