@@ -98,4 +98,7 @@ call one class from another class
 Serialiazable and parcelable 
 concurrent programming in android, race condition example, RxJava, caching in android, MVP vs MVVM
 
+The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
+The ViewModel class allows data to survive configuration changes such as screen rotations.
+
 
