@@ -11,4 +11,9 @@ In Structs, however, you simply copy and paste variables by creating a separate 
 
 response coming from background thread (asynchronous/ @escaping method) should run on main thread DispatchQueue.main.async
 
+The new defer keyword provides a closure that's executed only when execution leaves the current scope.
+eg: useful for clearing resources
+
+inout is used infront of the parameter type in function, to indicate of the parameter can be modified with-in the function
+
 
