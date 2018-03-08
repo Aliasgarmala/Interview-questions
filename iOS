@@ -22,3 +22,7 @@ Conversely, define a capture as a weak reference when the captured reference may
 Weak references are always of an optional type, and automatically become nil when the instance they reference is deallocated.
 This enables you to check for their existence within the closure’s body.
 
+when to use computed propertv vs function 
+you can replace a function with computed property if it has no argument and returns a value. 
+1. If it doesn't throw 2. complexity is 0(1)  3. returns the same result over invocations 4. simple calculation
+
