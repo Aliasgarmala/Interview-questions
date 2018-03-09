@@ -26,3 +26,5 @@ when to use computed propertv vs function
 you can replace a function with computed property if it has no argument and returns a value. 
 1. If it doesn't throw 2. complexity is 0(1)  3. returns the same result over invocations 4. simple calculation
 
+computed variables are always dependent on another variable. so you shoudln't have setter method to set `self`.
+use observable properties for didSet
