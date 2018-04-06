@@ -28,3 +28,5 @@ you can replace a function with computed property if it has no argument and retu
 
 computed variables are always dependent on another variable. so you shoudln't have setter method to set `self`.
 use observable properties for didSet
+
+sudo gem install synx to remove orphaned files
