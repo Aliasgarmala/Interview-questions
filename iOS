@@ -30,3 +30,6 @@ computed variables are always dependent on another variable. so you shoudln't ha
 use observable properties for didSet
 
 sudo gem install synx to remove orphaned files
+
+ The property value will hold up on every instance of a class(pass by reference)where as for struct new value will be 
+added for every instance (pass by value)
