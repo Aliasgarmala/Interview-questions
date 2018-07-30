@@ -101,4 +101,6 @@ concurrent programming in android, race condition example, RxJava, caching in an
 The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
 The ViewModel class allows data to survive configuration changes such as screen rotations.
 
+Dalvik is gone and replaced by ART (Android Runtime) has Ahead of time compilation, imrpobed GC,
+improved debugging, improved crash reports
 
