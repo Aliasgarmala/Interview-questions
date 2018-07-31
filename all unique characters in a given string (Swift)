@@ -1,0 +1,25 @@
+var str = "Hello, playground"
+var arrayOfChar = str.map{$0}
+//using data structure
+var set = Set<Character>()
+
+for character in arrayOfChar {
+    if !set.contains(character) {
+        set.insert(character)
+    }
+}
+//without data structure
+var sorted = str.sorted{$0>$1}
+print(sorted)
+
+var newArr: [Character] = []
+
+for i in stride(from: 0, to: sorted.count - 1, by: 1) {
+    if sorted[i] == sorted[i+1] {
+        continue
+    } else {
+        newArr.append(sorted[i])
+    }
+}
+
+print(newArr)
