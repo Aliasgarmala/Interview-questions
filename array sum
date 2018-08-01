@@ -1,4 +1,4 @@
-//given an array of integers find the index of the numbersswhich would sum to 10
+//given an array of integers find the index of the numbers which would sum to 10
 //for eg: array[1,2,8,9];
 //return index 0 and 3
 
