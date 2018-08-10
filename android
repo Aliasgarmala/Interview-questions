@@ -100,7 +100,17 @@ concurrent programming in android, race condition example, RxJava, caching in an
 
 The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
 The ViewModel class allows data to survive configuration changes such as screen rotations.
+Lifecycleowner object has a lifecycle object which tells you what state of lifecycle you're in and query
+the state and put your code or attach an oberserver which has callbacks on appropriate lifecycles, 
+this can be put independent of your activity
+Only view and ViewModel in activities, LiveData tracks all the changes and handles lifecycle separately.
+Room is local persistance for data
+New paging library for recyclerview 
 
 Dalvik is gone and replaced by ART (Android Runtime) has Ahead of time compilation, imrpobed GC,
 improved debugging, improved crash reports
+
+StrictMode is the API which should be used on App Application and in developer build so that it prevents accidental 
+things like accidental things accessing network/disk on main thread
+
 
