@@ -1,7 +1,7 @@
 By default, the system uses the Bundle instance state to save information about each View object when
 the activity is destroyed and recreated.
 To save additional data about the activity state, you must override the onSaveInstanceState() callback and
-onRestoreInstanceState() 
+onRestoreInstanceState() and reuse LiveData and ViewModel is not destroyed
 
 Implict vs explicit intent
 Implicit intents do not declare the class name of the component to start, but instead declare an action to perform.
