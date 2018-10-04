@@ -1,3 +1,10 @@
+To navigate transitions between stages of the activity lifecycle, the Activity class provides a core set of six callbacks:
+onCreate(), onStart(), onResume(), onPause(), onStop(), and onDestroy().
+
+onCreate() : you perform basic application startup logic that should happen only once for the entire life of the activity.
+onStart() called when the activity is becoming visible to the user.
+onResume() called when the activity will start interacting with the user.
+
 By default, the system uses the Bundle instance state to save information about each View object when
 the activity is destroyed and recreated.
 To save additional data about the activity state, you must override the onSaveInstanceState() callback and
