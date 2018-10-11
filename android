@@ -48,11 +48,6 @@ rather than the res/drawable-[density]/ folders.
 the resources in drawable/ are the default drawable resources. you can also provide orientation qualifier
 3. provide different layouts for different screen sizes
 
-To add support for more languages, create additional values directories inside res/ that include a hyphen 
-and the ISO language code at the end of the directory name.For example, values-es/. 
-Android loads the appropriate resources according to the locale settings of the device at run time.
-To add support for more languages, create additional values directories inside res/ that include a
-hyphen and the ISO language code at the end of the directory name
 
 Sample-webrtc-web which is the SDK with QuickBlox use for video conferrencing 
 
@@ -61,23 +56,8 @@ Traceview tool to check the bottlenecks in the code and how much time a function
 Android operating system is a stack of software components which is roughly divided into five sections and 
 four main layers.
 
-Architecture of android: 
-5:Linux kernel: This provides a level of abstraction between the device hardware and it contains all the 
-essential hardware drivers like camera, keypad, display etc. 
-4: Libraries: SQLite database, SSL libraries responsible for Internet security
-3: Android Libraries: Java-based libraries that are specific to Android development
-2. Android Runtime: This section provides a key component called Dalvik Virtual Machine which is a kind of Java Virtual Machine
-specially designed and optimized for Android.The Dalvik VM makes use of Linux core features like memory management and 
-multi-threading, which is intrinsic in the Java language. 
-The Dalvik VM enables every Android application to run in its own process, with its own instance of the Dalvik virtual machine.
-1. Application Framework: The Application Framework layer provides many higher-level services to applications in the form of 
-Java classes
-Applications: You will find all the Android application at the top layer. You will write your 
-application to be installed on this layer only
-
 Use tape library in android to upload images in the queue even when the network is flaky.
 Try pressure testing your app by closing the process.
-
 
 The Application class, or any subclass of the Application class, is instantiated before any other class when the 
 process for your application/package is created.
@@ -104,6 +84,10 @@ what happend on device orientation
 call one class from another class 
 Serialiazable and parcelable 
 concurrent programming in android, race condition example, RxJava, caching in android, MVP vs MVVM
+what is a bitmap
+bitmap images (9 patch) automatically resize to accommodate the contents of the view and the size of the screen
+Selected parts of the image are scaled horizontally or vertically based on indicators drawn within the image.
+how to avoid race condition in android
 
 The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
 The ViewModel class allows data to survive configuration changes such as screen rotations.
