@@ -79,6 +79,7 @@ Lifecycleowner object has a lifecycle object which tells you what state of lifec
 the state and put your code or attach an oberserver which has callbacks on appropriate lifecycles, 
 this can be put independent of your activity
 Only view and ViewModel in activities, LiveData tracks all the changes and handles lifecycle separately.
+LiveData setValue is main thread post value is background thread
 Room is local persistance for data
 New paging library for recyclerview 
 
@@ -87,3 +88,6 @@ improved debugging, improved crash reports
 
 StrictMode is the API which should be used on App Application and in developer build so that it prevents accidental 
 things like accidental things accessing network/disk on main thread
+
+you may want to implement code to access an existing content provider in another application (content receiver),
+or you may want to create a new content provider in your application to share data with other applications(content provider)
