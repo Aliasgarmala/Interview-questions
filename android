@@ -13,6 +13,9 @@ onRestoreInstanceState() and reuse LiveData and ViewModel is not destroyed
 Implict vs explicit intent
 Implicit intents do not declare the class name of the component to start, but instead declare an action to perform.
 For eg: you will need and intentchooser or intent picker to and set the type of the app you are targeting
+An intent that is used with sticky broadcast, is called as sticky intent.
+This intent will stick with android system for future broadcast receiver requests. for eg: battery low. so future receiver
+(dynamic) knows the battery is low and can take action accordingly. (It's deprecated now)
 
 To advertise which implicit intents your app can receive, declare one or more intent filters for each of your app
 components with an <intent-filter> element in your manifest file.
@@ -34,8 +37,6 @@ UI. if the user doesn't grant the permission (or revokes it later on), your app 
 perform the operation at all.
 Quite often your app can avoid requesting a permission by using an intent instead
 
-
-
 API 15: Android 4.0.3 (IceCreamSandwich) this cover approx 94.0% of devices that are active on google play store
 You get this info when you create the new app in android studio.
 
@@ -47,7 +48,6 @@ Place all your launcher icons in the res/mipmap-[density]/ folders,
 rather than the res/drawable-[density]/ folders. 
 the resources in drawable/ are the default drawable resources. you can also provide orientation qualifier
 3. provide different layouts for different screen sizes
-
 
 Sample-webrtc-web which is the SDK with QuickBlox use for video conferrencing 
 
@@ -103,5 +103,3 @@ improved debugging, improved crash reports
 
 StrictMode is the API which should be used on App Application and in developer build so that it prevents accidental 
 things like accidental things accessing network/disk on main thread
-
-
