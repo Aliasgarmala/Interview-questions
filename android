@@ -91,3 +91,5 @@ things like accidental things accessing network/disk on main thread
 
 you may want to implement code to access an existing content provider in another application (content receiver),
 or you may want to create a new content provider in your application to share data with other applications(content provider)
+
+Shared pereferences is the place to store key value pair within the app context only and only primitive types allowed there
