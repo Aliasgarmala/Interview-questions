@@ -93,3 +93,8 @@ you may want to implement code to access an existing content provider in another
 or you may want to create a new content provider in your application to share data with other applications(content provider)
 
 Shared pereferences is the place to store key value pair within the app context only and only primitive types allowed there
+
+Intent services creates a default worker thread, Creates a work queue by deafult that passes one intent at a time to your 
+onHandleIntent() implementation, so you never have to worry about multi-threading.
+Stops the service after all of the start requests are handled, so you never have to call stopSelf().
+
