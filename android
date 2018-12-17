@@ -93,6 +93,7 @@ you may want to implement code to access an existing content provider in another
 or you may want to create a new content provider in your application to share data with other applications(content provider)
 
 Shared pereferences is the place to store key value pair within the app context only and only primitive types allowed there
+Handler is used to communicate from back ground thread to main thread through messages.
 
 Intent services creates a default worker thread, Creates a work queue by deafult that passes one intent at a time to your 
 onHandleIntent() implementation, so you never have to worry about multi-threading.
@@ -100,5 +101,7 @@ Stops the service after all of the start requests are handled, so you never have
 
 Service OnStartCommand() is called when starting a new service. 
 you should return START_STICKY in OnStartCommand (the system will try to re-create your service after it is killed)
-START_NON_STICKY is system doesn't care
+START_NON_STICKY is system doesn't care. Since this runs on Main thread you need to create worker thread to do any non blocking
+work. You need to stop the service explicitly. You can always communicate back to your activity using  BroadcastReceivers. 
+A perfect ex is to play music player, where music is playing in the background 
 
