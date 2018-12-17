@@ -98,3 +98,7 @@ Intent services creates a default worker thread, Creates a work queue by deafult
 onHandleIntent() implementation, so you never have to worry about multi-threading.
 Stops the service after all of the start requests are handled, so you never have to call stopSelf().
 
+Service OnStartCommand() is called when starting a new service. 
+you should return START_STICKY in OnStartCommand (the system will try to re-create your service after it is killed)
+START_NON_STICKY is system doesn't care
+
