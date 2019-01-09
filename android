@@ -105,3 +105,4 @@ START_NON_STICKY is system doesn't care. Since this runs on Main thread you need
 work. You need to stop the service explicitly. You can always communicate back to your activity using  BroadcastReceivers. 
 A perfect ex is to play music player, where music is playing in the background 
 
+Dependency Injection: Is a design pattern where you don't create the objects yourself but you let someone else create it.
