@@ -66,6 +66,9 @@ you want to make it static inner class so that it is indedpendent of the lifecyc
 Anonymous class for eg. AsyncTask that has reference to the activity, is destroyed before the result is return back.
 Use Leak Canary to solve memory errors
 Android Profiler is the tool used to check java heap dumps, memory leaks and network utilization
+CPU utilization gives info about threads. and if they're running (you can do a snapshot) it shows methods and calles
+You can run java garbage collector and see if it doesn't free up the memory that means the memory is leaking
+and look at the network profiler which gives you all the info about the calls and data of bytes
 
 Read about View.onMeasure() and View.onLayout()
 
