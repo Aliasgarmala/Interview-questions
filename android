@@ -39,8 +39,6 @@ rather than the res/drawable-[density]/ folders.
 the resources in drawable/ are the default drawable resources. you can also provide orientation qualifier
 3. provide different layouts for different screen sizes
 
-Sample-webrtc-web which is the SDK with QuickBlox use for video conferrencing 
-
 Traceview tool to check the bottlenecks in the code and how much time a function is taking to execute.
 
 Use tape library in android to upload images in the queue even when the network is flaky.
