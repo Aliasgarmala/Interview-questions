@@ -54,6 +54,8 @@ View.onMeasure(calculate measuredWidth, measuredHeight) -> View.onLayout(calcula
 
 https://www.tutorialspoint.com/android/android_application_components.htm
 
+Broadcast Receivers simply respond to broadcast messages from other applications/ same application or from the system.
+
 call one class from another class 
 concurrent programming in android, race condition example, RxJava, caching in android, MVP vs MVVM
 what is a bitmap
@@ -96,5 +98,6 @@ work. You need to stop the service explicitly. You can always communicate back t
 A perfect ex is to play music player, where music is playing in the background 
 Post oreo you cannot create a background service indefinitely (to optimize battery performance). 
 Hence use JobIntent service. it behaves as an IntentService on pre-O devices and on O and higher, it dispatches it as a job.
-
-JobScheduler is available for API 21 and up for lower version jobDispatcher
+Work Manager is the ultimate answer to do background task. 
+Where possible, it uses JobScheduler or Firebase JobDispatcher to do the work
+JobScheduler is available for API 21 and up for lower version jobDispatcher.
