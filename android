@@ -4,6 +4,7 @@ onCreate(), onStart(), onResume(), onPause(), onStop(), and onDestroy().
 onCreate() : you perform basic application startup logic that should happen only once for the entire life of the activity.
 onStart() called when the activity is becoming visible to the user.
 onResume() called when the activity will start interacting with the user.
+partially covering the activity in progress onPause() is called, completely covering onStop() is called 
 
 By default, the system uses the Bundle instance state to save information about each View object when
 the activity is destroyed and recreated.
@@ -42,24 +43,22 @@ the resources in drawable/ are the default drawable resources. you can also prov
 Traceview tool to check the bottlenecks in the code and how much time a function is taking to execute.
 
 Use tape library in android to upload images in the queue even when the network is flaky.
-Try pressure testing your app by closing the process.
 
 The Application class, or any subclass of the Application class, is instantiated before any other class when the 
 process for your application/package is created.
 uses of subclass of application
 Global initialization that needs to be shared across all components (crash reporting, persistence)
 
-Read about View.onMeasure() and View.onLayout()
+View.onMeasure(calculate measuredWidth, measuredHeight) -> View.onLayout(calculate top,bottom,left, right)
+-> View.onDraw() for custom views
 
 https://www.tutorialspoint.com/android/android_application_components.htm
 
 call one class from another class 
-Serialiazable and parcelable 
 concurrent programming in android, race condition example, RxJava, caching in android, MVP vs MVVM
 what is a bitmap
 bitmap images (9 patch) automatically resize to accommodate the contents of the view and the size of the screen
 Selected parts of the image are scaled horizontally or vertically based on indicators drawn within the image.
-how to avoid race condition in android
 
 The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
 The ViewModel class allows data to survive configuration changes such as screen rotations.
@@ -95,5 +94,7 @@ you should return START_STICKY in OnStartCommand (the system will try to re-crea
 START_NON_STICKY is system doesn't care. Since this runs on Main thread you need to create worker thread to do any non blocking
 work. You need to stop the service explicitly. You can always communicate back to your activity using  BroadcastReceivers. 
 A perfect ex is to play music player, where music is playing in the background 
+Post oreo you cannot create a background service indefinitely (to optimize battery performance). 
+Hence use JobIntent service. it behaves as an IntentService on pre-O devices and on O and higher, it dispatches it as a job.
 
-Dependency Injection: Is a design pattern where you don't create the objects yourself but you let someone else create it.
+JobScheduler is available for API 21 and up for lower version jobDispatcher
