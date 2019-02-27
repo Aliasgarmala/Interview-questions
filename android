@@ -66,6 +66,8 @@ The ViewModel class is designed to store and manage UI-related data in a lifecyc
 The ViewModel class allows data to survive configuration changes such as screen rotations.
 Subclass from AndroidViewModel if you need Context, else subclass ViewModel
 Lifecycleowner object has a lifecycle object which tells you what state of lifecycle you're in and query
+If order to get the data back from repository "service" class, you can use a callback closure/ 
+higher order function in kotlin. so that the viewmodel gets a callback and gets into the mutableLiveData
 the state and put your code or attach an oberserver which has callbacks on appropriate lifecycles, 
 this can be put independent of your activity
 Only view and ViewModel in activities, LiveData tracks all the changes and handles lifecycle separately.
