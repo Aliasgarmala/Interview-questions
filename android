@@ -73,8 +73,15 @@ this can be put independent of your activity
 Only view and ViewModel in activities, LiveData tracks all the changes and handles lifecycle separately.
 LiveData setValue is main thread post value is background thread
 Room is local persistance for data
-New paging library for recyclerview 
-
+Paging Library has 3 different kind of data source
+  1: PageKeyDataSource: this is used when we get pageNumber from the API
+  2: ItemKeyedDataSource: here fetch unbounded list eg: comments in the blog 
+  3: PositionalDataSource: fixed sized that can go to any arbitary position generally static data
+DataSource Factory gives all the configuration 
+DiffUtil is basically newway to do notifyadapterchange() difference between two lists and provides the updated list as
+an output. This class is used to notify updates to a RecyclerView Adapter. inside the adapter
+diffResult.dispatchUpdatesTo(this);
+  
 Dalvik is gone and replaced by ART (Android Runtime) has Ahead of time compilation, imrpobed GC,
 improved debugging, improved crash reports
 
